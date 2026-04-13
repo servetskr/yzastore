@@ -7,46 +7,8 @@ export interface Product {
   oldPrice?: number;
   badge?: "Yeni" | "Sınırlı" | "İndirim" | "Çok Satan";
   description: string;
-  gradient: [string, string];
+  image: string;
 }
-
-const gradients: Record<string, [string, string][]> = {
-  topuklu: [
-    ["#1a1a2e", "#16213e"],
-    ["#2d132c", "#1a1a2e"],
-    ["#0f3460", "#16213e"],
-    ["#1a1a2e", "#0f3460"],
-    ["#2d132c", "#0f3460"],
-    ["#16213e", "#1a1a2e"],
-  ],
-  sneaker: [
-    ["#e8e4e0", "#d4cfc9"],
-    ["#c9c0b6", "#e0d9d1"],
-    ["#d6cdc4", "#c4b8ac"],
-    ["#e4ddd5", "#d0c8be"],
-    ["#d9d2c9", "#c7bfb4"],
-    ["#e0d8cf", "#cec4b8"],
-  ],
-  gunluk: [
-    ["#2c3e50", "#34495e"],
-    ["#3d3d3d", "#4a4a4a"],
-    ["#4a3728", "#5c4a3a"],
-    ["#2c3e50", "#3d3d3d"],
-    ["#34495e", "#4a3728"],
-  ],
-  bagcik: [
-    ["#0d7377", "#14a3a8"],
-    ["#14a3a8", "#0d7377"],
-    ["#1a8a8e", "#0d7377"],
-    ["#0d7377", "#1a8a8e"],
-    ["#14a3a8", "#1a8a8e"],
-  ],
-  "ozel-seri": [
-    ["#b8860b", "#d4a843"],
-    ["#8b6914", "#b8960b"],
-    ["#a07818", "#c4a235"],
-  ],
-};
 
 export const products: Product[] = [
   // Topuklu Ayakkabı (6)
@@ -58,7 +20,7 @@ export const products: Product[] = [
     price: 2490,
     badge: "Yeni",
     description: "İnce topuk, sivri burun, mat deri görünüm. Gece kombinlerinizin yıldızı.",
-    gradient: gradients.topuklu[0],
+    image: "https://images.unsplash.com/photo-1543163521-1bf539c55dd2?w=400&h=530&fit=crop&q=80",
   },
   {
     id: 2,
@@ -69,7 +31,7 @@ export const products: Product[] = [
     oldPrice: 2790,
     badge: "İndirim",
     description: "Kalın topuklu, bilekten bantlı, zamansız siyah tasarım.",
-    gradient: gradients.topuklu[1],
+    image: "https://images.unsplash.com/photo-1596703263926-eb0762ee17e4?w=400&h=530&fit=crop&q=80",
   },
   {
     id: 3,
@@ -78,7 +40,7 @@ export const products: Product[] = [
     categoryLabel: "Topuklu Ayakkabı",
     price: 2890,
     description: "Platform taban, süet doku, modern kadınsı çizgiler.",
-    gradient: gradients.topuklu[2],
+    image: "https://images.unsplash.com/photo-1515347619252-60a4bf4fff4f?w=400&h=530&fit=crop&q=80",
   },
   {
     id: 4,
@@ -88,7 +50,7 @@ export const products: Product[] = [
     price: 1990,
     badge: "Çok Satan",
     description: "Kadife hissi veren yumuşak kumaş, orta yükseklikte topuk.",
-    gradient: gradients.topuklu[3],
+    image: "https://images.unsplash.com/photo-1573100925118-870b8efc799d?w=400&h=530&fit=crop&q=80",
   },
   {
     id: 5,
@@ -98,7 +60,7 @@ export const products: Product[] = [
     price: 3490,
     badge: "Sınırlı",
     description: "İnce bant detayı, minimal kristal dokunuşlar, özel gece modeli.",
-    gradient: gradients.topuklu[4],
+    image: "https://images.unsplash.com/photo-1518049362265-d5b2a6467637?w=400&h=530&fit=crop&q=80",
   },
   {
     id: 6,
@@ -107,7 +69,7 @@ export const products: Product[] = [
     categoryLabel: "Topuklu Ayakkabı",
     price: 1790,
     description: "Alçak topuk, günlük şıklık, ofisten akşam yemeğine geçiş.",
-    gradient: gradients.topuklu[5],
+    image: "https://images.unsplash.com/photo-1582897085656-c636d006a246?w=400&h=530&fit=crop&q=80",
   },
 
   // Sneaker (6)
@@ -119,7 +81,7 @@ export const products: Product[] = [
     price: 1690,
     badge: "Yeni",
     description: "Ultra hafif taban, nefes alan üst kumaş, gün boyu konfor.",
-    gradient: gradients.sneaker[0],
+    image: "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=400&h=530&fit=crop&q=80",
   },
   {
     id: 8,
@@ -128,7 +90,7 @@ export const products: Product[] = [
     categoryLabel: "Sneaker",
     price: 1490,
     description: "Minimal tasarım, premium dikiş detayları, her kombine uyum.",
-    gradient: gradients.sneaker[1],
+    image: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=400&h=530&fit=crop&q=80",
   },
   {
     id: 9,
@@ -139,7 +101,7 @@ export const products: Product[] = [
     oldPrice: 2290,
     badge: "İndirim",
     description: "Yüksek taban, sokak stili, cesur duruş.",
-    gradient: gradients.sneaker[2],
+    image: "https://images.unsplash.com/photo-1551107696-a4b0c5a0d9a2?w=400&h=530&fit=crop&q=80",
   },
   {
     id: 10,
@@ -149,7 +111,7 @@ export const products: Product[] = [
     price: 1290,
     badge: "Çok Satan",
     description: "Ten rengi tonları, yumuşak deri, sofistike spor şıklık.",
-    gradient: gradients.sneaker[3],
+    image: "https://images.unsplash.com/photo-1465453869711-7e174808ace9?w=400&h=530&fit=crop&q=80",
   },
   {
     id: 11,
@@ -158,7 +120,7 @@ export const products: Product[] = [
     categoryLabel: "Sneaker",
     price: 1590,
     description: "Tek renk tasarım, ergonomik yapı, modern siluet.",
-    gradient: gradients.sneaker[4],
+    image: "https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=400&h=530&fit=crop&q=80",
   },
   {
     id: 12,
@@ -167,7 +129,7 @@ export const products: Product[] = [
     categoryLabel: "Sneaker",
     price: 990,
     description: "Örgü yapı, bağcıksız giriş, gündelik zarafet.",
-    gradient: gradients.sneaker[5],
+    image: "https://images.unsplash.com/photo-1595341888016-a392ef81b7de?w=400&h=530&fit=crop&q=80",
   },
 
   // Günlük Ayakkabı (5)
@@ -179,7 +141,7 @@ export const products: Product[] = [
     price: 1390,
     badge: "Yeni",
     description: "Klasik loafer kesim, yumuşak iç astar, tüm gün rahatlık.",
-    gradient: gradients.gunluk[0],
+    image: "https://images.unsplash.com/photo-1560343090-f0409e92791a?w=400&h=530&fit=crop&q=80",
   },
   {
     id: 14,
@@ -189,7 +151,7 @@ export const products: Product[] = [
     price: 899,
     badge: "Çok Satan",
     description: "Katlanabilir yapı, çanta dostu, zarif babet tasarım.",
-    gradient: gradients.gunluk[1],
+    image: "https://images.unsplash.com/photo-1605733160314-4fc7dac4bb16?w=400&h=530&fit=crop&q=80",
   },
   {
     id: 15,
@@ -198,7 +160,7 @@ export const products: Product[] = [
     categoryLabel: "Günlük Ayakkabı",
     price: 2190,
     description: "Elastik yan panel, mat deri, her mevsim kullanım.",
-    gradient: gradients.gunluk[2],
+    image: "https://images.unsplash.com/photo-1603487742131-4160ec999306?w=400&h=530&fit=crop&q=80",
   },
   {
     id: 16,
@@ -209,7 +171,7 @@ export const products: Product[] = [
     oldPrice: 1490,
     badge: "İndirim",
     description: "Hasır detaylı taban, yazlık kumaş, tatil havası.",
-    gradient: gradients.gunluk[3],
+    image: "https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?w=400&h=530&fit=crop&q=80",
   },
   {
     id: 17,
@@ -218,7 +180,7 @@ export const products: Product[] = [
     categoryLabel: "Günlük Ayakkabı",
     price: 1290,
     description: "Süet doku, dikişli kenar detayı, doğal tonlar.",
-    gradient: gradients.gunluk[4],
+    image: "https://images.unsplash.com/photo-1604671801908-6f0c6a092c05?w=400&h=530&fit=crop&q=80",
   },
 
   // Bağcık & Aksesuar (5)
@@ -230,7 +192,7 @@ export const products: Product[] = [
     price: 189,
     badge: "Yeni",
     description: "Saten kurdele bağcık, sneaker'larınıza feminen dokunuş.",
-    gradient: gradients.bagcik[0],
+    image: "https://images.unsplash.com/photo-1607522370275-f14206abe5d3?w=400&h=530&fit=crop&q=80",
   },
   {
     id: 19,
@@ -240,7 +202,7 @@ export const products: Product[] = [
     price: 349,
     badge: "Sınırlı",
     description: "İnce zincir detaylı dekoratif bağcık, premium görünüm.",
-    gradient: gradients.bagcik[1],
+    image: "https://images.unsplash.com/photo-1556048219-bb6978360b84?w=400&h=530&fit=crop&q=80",
   },
   {
     id: 20,
@@ -249,7 +211,7 @@ export const products: Product[] = [
     categoryLabel: "Bağcık & Aksesuar",
     price: 229,
     description: "Kadife bağcık seti, 3 renk seçeneği, her ayakkabıya uyum.",
-    gradient: gradients.bagcik[2],
+    image: "https://images.unsplash.com/photo-1512374382149-233c42b6a83b?w=400&h=530&fit=crop&q=80",
   },
   {
     id: 21,
@@ -259,7 +221,7 @@ export const products: Product[] = [
     price: 399,
     badge: "Çok Satan",
     description: "Ayakkabı üzerine takılabilen kristal klips aksesuar seti.",
-    gradient: gradients.bagcik[3],
+    image: "https://images.unsplash.com/photo-1600269452121-4f2416e55c28?w=400&h=530&fit=crop&q=80",
   },
   {
     id: 22,
@@ -268,7 +230,7 @@ export const products: Product[] = [
     categoryLabel: "Bağcık & Aksesuar",
     price: 149,
     description: "Mumlu pamuk bağcık ikili set, dayanıklı ve şık.",
-    gradient: gradients.bagcik[4],
+    image: "https://images.unsplash.com/photo-1562183241-b937e95585b6?w=400&h=530&fit=crop&q=80",
   },
 
   // Özel Seri (3)
@@ -280,7 +242,7 @@ export const products: Product[] = [
     price: 3990,
     badge: "Sınırlı",
     description: "Numaralı üretim, el yapımı deri, imza koleksiyonu parçası.",
-    gradient: gradients["ozel-seri"][0],
+    image: "https://images.unsplash.com/photo-1581101767113-1677fc2beaa8?w=400&h=530&fit=crop&q=80",
   },
   {
     id: 24,
@@ -290,7 +252,7 @@ export const products: Product[] = [
     price: 2990,
     badge: "Sınırlı",
     description: "Altın detaylı premium sneaker, sınırlı sayıda üretim.",
-    gradient: gradients["ozel-seri"][1],
+    image: "https://images.unsplash.com/photo-1585232004423-244e0e6904e3?w=400&h=530&fit=crop&q=80",
   },
   {
     id: 25,
@@ -300,6 +262,6 @@ export const products: Product[] = [
     price: 3490,
     badge: "Yeni",
     description: "El dokuması detay, zanaatkâr üretim, koleksiyoner parçası.",
-    gradient: gradients["ozel-seri"][2],
+    image: "https://images.unsplash.com/photo-1587563871167-1ee9c731aefb?w=400&h=530&fit=crop&q=80",
   },
 ];

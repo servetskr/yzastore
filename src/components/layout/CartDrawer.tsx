@@ -101,12 +101,11 @@ export default function CartDrawer() {
                       key={item.product.id}
                       className="flex gap-4 pb-5 border-b border-stone-50 last:border-0"
                     >
-                      {/* Mini product visual */}
-                      <div
-                        className="w-20 h-24 rounded-md flex-shrink-0"
-                        style={{
-                          background: `linear-gradient(145deg, ${item.product.gradient[0]}, ${item.product.gradient[1]})`,
-                        }}
+                      {/* Mini product image */}
+                      <img
+                        src={item.product.image}
+                        alt={item.product.name}
+                        className="w-20 h-24 rounded-md flex-shrink-0 object-cover bg-stone-100"
                       />
 
                       <div className="flex-1 min-w-0">

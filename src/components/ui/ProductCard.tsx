@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 import { Product } from "@/data/products";
 import { formatPrice } from "@/lib/constants";
 import { useCart } from "@/context/CartContext";
-import ShoeIllustration from "./ShoeIllustration";
 
 interface ProductCardProps {
   product: Product;
@@ -29,25 +28,14 @@ export default function ProductCard({ product, index = 0 }: ProductCardProps) {
       transition={{ duration: 0.5, delay: index * 0.04 }}
       className="group cursor-pointer"
     >
-      {/* Image placeholder */}
-      <div className="relative aspect-[3/4] rounded-lg overflow-hidden mb-4">
-        <div
-          className="absolute inset-0 transition-transform duration-700 ease-out group-hover:scale-105"
-          style={{
-            background: `linear-gradient(145deg, ${product.gradient[0]}, ${product.gradient[1]})`,
-          }}
+      {/* Product image */}
+      <div className="relative aspect-[3/4] rounded-lg overflow-hidden mb-4 bg-stone-100">
+        <img
+          src={product.image}
+          alt={product.name}
+          className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+          loading="lazy"
         />
-
-        {/* Shoe illustration */}
-        <div className="absolute inset-0 flex items-center justify-center text-white">
-          <ShoeIllustration
-            category={product.category}
-            className="w-[75%] h-auto drop-shadow-lg transition-transform duration-700 ease-out group-hover:scale-110 group-hover:-translate-y-1"
-          />
-        </div>
-
-        {/* Product name overlay at bottom */}
-        <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/30 to-transparent h-16 pointer-events-none" />
 
         {/* Badge */}
         {product.badge && (
