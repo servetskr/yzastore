@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { Product } from "@/data/products";
 import { formatPrice } from "@/lib/constants";
 import { useCart } from "@/context/CartContext";
+import ShoeIllustration from "./ShoeIllustration";
 
 interface ProductCardProps {
   product: Product;
@@ -36,17 +37,17 @@ export default function ProductCard({ product, index = 0 }: ProductCardProps) {
             background: `linear-gradient(145deg, ${product.gradient[0]}, ${product.gradient[1]})`,
           }}
         />
-        {/* Shoe silhouette overlay */}
-        <div className="absolute inset-0 flex items-center justify-center opacity-[0.08]">
-          <svg
-            viewBox="0 0 120 60"
-            className="w-3/4"
-            fill="white"
-          >
-            <ellipse cx="60" cy="45" rx="50" ry="12" />
-            <path d="M20 45 Q15 30 25 20 Q40 8 60 12 Q80 8 95 20 Q105 30 100 45 Z" />
-          </svg>
+
+        {/* Shoe illustration */}
+        <div className="absolute inset-0 flex items-center justify-center text-white">
+          <ShoeIllustration
+            category={product.category}
+            className="w-[75%] h-auto drop-shadow-lg transition-transform duration-700 ease-out group-hover:scale-110 group-hover:-translate-y-1"
+          />
         </div>
+
+        {/* Product name overlay at bottom */}
+        <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/30 to-transparent h-16 pointer-events-none" />
 
         {/* Badge */}
         {product.badge && (
@@ -58,17 +59,15 @@ export default function ProductCard({ product, index = 0 }: ProductCardProps) {
         )}
 
         {/* Quick add */}
-        <motion.button
-          initial={{ opacity: 0, y: 10 }}
-          whileHover={{ scale: 1.03 }}
+        <button
           onClick={(e) => {
             e.stopPropagation();
             addToCart(product.id);
           }}
-          className="absolute bottom-3 left-3 right-3 py-2.5 bg-white/95 text-stone-900 text-xs font-semibold tracking-wide uppercase rounded-lg opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-2 group-hover:translate-y-0 hover:bg-white"
+          className="absolute bottom-3 left-3 right-3 py-2.5 bg-white/95 text-stone-900 text-xs font-semibold tracking-wide uppercase rounded-lg opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-2 group-hover:translate-y-0 hover:bg-white active:scale-[0.98] cursor-pointer"
         >
           Sepete Ekle
-        </motion.button>
+        </button>
       </div>
 
       {/* Info */}
